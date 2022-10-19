@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding: 0;
+}
+
+html {
+    font-size: calc(15px + 0.390625vw);
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+h3 {
+    font-size: 2rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+h5 {
+    font-size: 0.9rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+p {
+    font-size: 0.8rem;
+    font-family: 'Roboto Mono';
+    font-weight: lighter;
+}
+
+
+body{
+    /* background-color: #662020; */
+    color: white;
+    background: linear-gradient(110deg, #662020 60%, #8b2e2e 60%);
+    /* 8b2e2e */
+}
+
+.noise::before{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    /* you can control opacity of noise  */
+    opacity: 0.12;  
+    z-index: 1000;
+    pointer-events: none;
+    background: url(https://raw.githubusercontent.com/taimoorshahzada/Film-Grain-Noise-Effect-on-Background-in-Website-using-Pure-CSS/main/noise.gif) ;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #8b2e2e;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #8b2e2e;
+    opacity: 0;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+    border: 3px none #000000;
+  }
+
+.general-grid{
+    display: grid;
+    grid-template-rows: 10% auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: 
+            "navbar"
+            "presentation"
+            "projects"
+            "contact";
+    width: 100%;
+    height: 100vh;
+}
+
+.general-navbar {
+    grid-area: navbar;
+    width: 100%;
+}
+
+nav {
+    width: 90%;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 20% 45% 35%;
+    grid-template-areas: 
+        "home nothing links";
+    place-items: center;
+    position: relative;
+    color: white;
+    border-bottom: 3px solid black;
+    margin: auto;
+    
+}
+
+.home {
+    grid-area: home;
+    position: absolute;
+    bottom: 5px;
+}
+
+.links {
+    position: absolute;
+    bottom: 5px;
+    grid-area: links;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav li {
+    grid-area: links;
+    list-style: none;
+    text-decoration: none;
+    padding: 0 40px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+
+  } 
+
+ 
+.general-presentation {
+    grid-area: presentation;
+}
+
+.presentation-container {
+    display: grid;
+    width: 70%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "text picture";
+    margin: auto;
+    position: relative;
+    margin-top: 4%;
+    /* padding-bottom: 4%; */
+    top: 50%;
+    transform: translateY(-50%);
+    padding-bottom: 8rem;
+} 
+
+.text-container {
+    grid-area: text;
+    /* place-self: center; */
+    display: grid;
+    grid-template-rows: 20% 30% 30% 10% 10%;
+    grid-template-areas:
+        "hello"
+        "name"
+        "last-name"
+        "sentence1"
+        "sentence2" ;
+
+}
+
+.picture {
+    grid-area: picture;
+    /* background: orange; */
+    clip-path: polygon(100% 69%, 81% 55%, 79% 34%, 71% 0, 15% 0, 6% 6%, 0 25%, 1% 42%, 14% 61%, 
+                        27% 72%, 21% 81%, 28% 92%, 35% 100%, 45% 100%, 88% 83%, 100% 76%);
+    shape-outside: polygon(100% 69%, 81% 55%, 79% 34%, 71% 0, 15% 0, 6% 6%, 0 25%, 1% 42%, 14% 61%, 
+                            27% 72%, 21% 81%, 28% 92%, 35% 100%, 45% 100%, 88% 83%, 100% 76%);
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    margin: auto;
+    float :right
+}
+
+.text-container h1 {
+    grid-area: 
+        name
+        last-name;
+    margin-right: 0;
+    text-align: center;
+}
+
+.text-container h2 {
+    grid-area: 
+        hello;
+    text-align: center;
+}
+
+.text-container h4 {
+    grid-area: 
+        sentence1
+        sentence2;
+    text-align: center;
+}
+
+
+
+.general-projects{
+    grid-area: projects;
+    padding-bottom: 6rem;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "project1"
+        "project2"
+        "project3";
+    width: 80%;
+    margin: auto;
+}
+
+.general-projects h2 {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.general-projects h3 {
+    text-align: center;
+}
+
+.general-projects img {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top: 1.5rem;
+}
+
+.project1 {
+    grid-area: project1;
+    padding-bottom: 3rem;
+}
+
+.project2 {
+    grid-area: project2;
+    padding-bottom: 3rem;
+}
+
+.project3 {
+    grid-area: project3;
+    padding-bottom: 3rem;
+}
+
+.general-contact {
+    grid-area: contact;
+}
+
+.general-contact h2 {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+
