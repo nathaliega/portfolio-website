@@ -10,25 +10,26 @@
 <body>
     <div class="noise"></div>
 
+    <section class="general-navbar">
+        <nav>
+            <!-- <div class="noise2"></div> -->
+            <div class="home">
+                <li id="home"><a  href="#homepage">HOME</a></li>     
+            </div>
+            
+            <div class="links">
+                <ul>
+                    <li id="Projects"><a  href="#general-projects">Projects</a></li>
+                    <li id="Contact"><a  href="#contact">Contact</a></li>
+                    <li id="CV"><a  href="/cv.pdf">CV</a></li>
+                </ul>                
+            </div>
+        </nav>
+        
+    </section>
+    
     <div class="general-grid">
-        <section class="general-navbar">
-            <nav>
-                <div class="home">
-                    <li id="home"><a  href="#home">HOME</a></li>     
-                </div>
-
-                <div class="links">
-                    <ul>
-                        <li id="Projects"><a  href="#general-projects">Projects</a></li>
-                        <li id="Contact"><a  href="#contact">Contact</a></li>
-                        <li id="CV"><a  href="/cv.pdf">CV</a></li>
-                    </ul>                
-                </div>
-            </nav>
-
-        </section>
-
-        <section id="home" class="general-presentation">
+        <section id="homepage" class="general-presentation">
             <div class="presentation-container">
                 <div class="text-container">
                     <h2>Hello, I'm</h2>
@@ -95,14 +96,118 @@
         </section>
 
         <section id="contact" class="general-contact">
-            <div class="contact-container">
-                <h2>LET'S CONNECT! </h2>
-            </div>
+            <h2>LET'S CONNECT! </h2>
+            <!-- <div class="contact-container"> -->
+
+                
+                <!-- <div class="actual-form">
+                        <form id="contact-form" class="form-horizontal" role="form">
+                        <div class="form-group1">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+                        </div>
+                        </div>
+                
+                        <div class="form-group2">
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+                        </div>
+                        </div>
+                
+                        <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+                        
+                        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                        <div class="alt-send-button">
+                            <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                        </div>
+                        </button>
+                    </div>
+
+                  </form>
+                </div> -->
+                
+                
+
+            <!-- </div> -->
+
+            <div class="contact-wrapper">
+  
+                <!-- Left contact page --> 
+                  
+                  <form id="contact-form" class="form-horizontal" role="form">
+                     
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+                      </div>
+                    </div>
+              
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+                      </div>
+                    </div>
+              
+                    <textarea class="form-control2" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+                    
+                    <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                      <div class="alt-send-button">
+                        <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                      </div>
+                    
+                    </button>
+                    
+                  </form>
+                  
+                <!-- Left contact page --> 
+                  
+                    <div class="direct-contact-container">
+              
+                      <ul class="contact-list">
+                        <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Clermont-Ferrand, France</span></i></li>
+                        
+                        <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">+33 0749132609</a></span></i></li>
+                        
+                        <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">nathaliegalvez8@gmail.com</a></span></i></li>
+                        
+                      </ul>
+              
+                      <hr>
+                      <ul class="social-media-list">
+                        <li><a href="#" target="_blank" class="contact-icon">
+                          <i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#" target="_blank" class="contact-icon">
+                          <i class="fa fa-codepen" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#" target="_blank" class="contact-icon">
+                          <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#" target="_blank" class="contact-icon">
+                          <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>       
+                      </ul>
+                      <hr>
+              
+              
+                    </div>
+                  
+                </div>
+
         </section>
 
     </div>
 
-   
+    <script>
+        document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
+  });
+
+    </script>
+
 </body>
 
 </html>
