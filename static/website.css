@@ -35,19 +35,35 @@ h4 {
 h5 {
     font-size: 0.9rem;
     font-family: 'Roboto Mono', monospace;
+    font-weight: lighter;
 }
 
-p {
+h6 {
     font-size: 0.8rem;
     font-family: 'Roboto Mono';
     font-weight: lighter;
 }
 
+p {
+  font-size: 0.65rem;
+  font-family: 'Roboto Mono';
+  font-weight: lighter;
+}
+
+.bold {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+}
+
+/*#region BACKGROUND*/
 
 body{
     /* background-color: #662020; */
     color: white;
-    background: linear-gradient(110deg, #662020 60%, #8b2e2e 60%);
+    /* background: linear-gradient(110deg, #662020 60%, #8b2e2e 60%); */
+    /* background: linear-gradient(110deg, #8b2e2e 60%, #a33c3c 60%); */
+    background: linear-gradient(110deg, #a33b3b 60%, #ca5252 60%);
+
     /* 8b2e2e */
 }
 
@@ -59,7 +75,7 @@ body{
     height: 100vh;
     content: "";
     /* you can control opacity of noise  */
-    opacity: 0.1;  
+    opacity: 0.09;  
     z-index: -1000;
     /* pointer-events: none; */
     background: url(https://raw.githubusercontent.com/taimoorshahzada/Film-Grain-Noise-Effect-on-Background-in-Website-using-Pure-CSS/main/noise.gif) ;
@@ -115,6 +131,11 @@ body{
     height: 100vh;
 }
 
+/*#endregion BACKGROUND*/
+
+
+/*#region NAVBAR*/
+
 .general-navbar {
     /* grid-area: navbar; */
     width: 100%;
@@ -137,7 +158,7 @@ nav {
     /* border-bottom: 3px solid black; */
     margin: auto;
     min-height: 50px;
-    background-color: #000000;
+    /* background-color: #000000; */
     /* opacity: 0.8; */
     z-index: 1000;
 }
@@ -174,7 +195,11 @@ nav a {
 
   } 
 
- 
+/*#endregion NAVBAR*/
+
+
+ /*#region PRESENTATION*/
+
 .general-presentation {
     grid-area: presentation;
 }
@@ -245,20 +270,91 @@ nav a {
     text-align: center;
 }
 
+/*#endregion PRESENTATION*/
 
+
+/*#region PROJECTS*/  
 
 .general-projects{
     grid-area: projects;
     padding-bottom: 1rem;
 }
 
+.general-projects h2 {
+  text-align: center;
+  padding: 3rem 0;
+}
+
 .projects-container {
+  display: flex;
+  justify-content: space-around;
+  place-self: center;
+}
+
+.project {
+  opacity: 0;
+  /* transition: all 2s; */
+  filter: blur(5px);
+  transform: translateX(-100%);
+  width: 300px;
+  height: 550px;
+  border: 1.5px solid black;
+  box-shadow: 5px 5px 20px rgb(31, 31, 31);
+  transition: all .2s ease-in-out; 
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 1s;
+}
+
+.project:hover {
+  transform: scale(1.1); 
+}
+
+.project a {
+  color: white;
+  text-decoration: none;
+}
+
+.project img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 1.5rem;
+  object-fit: cover;
+  width: 80%;
+  max-height: 80%;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.project-text{
+  width: 80%;
+  margin: auto;
+  
+
+}
+
+.project p {
+  right: 0;
+  bottom: 1rem;
+}
+
+
+/* .projects-container {
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
     grid-template-areas:
-        "project1"
-        "project2"
-        "project3";
+        "project1 project2"
+        "project3 project4";
     width: 80%;
     margin: auto;
 }
@@ -276,7 +372,10 @@ nav a {
     display:block;
     margin-left:auto;
     margin-right:auto;
-    padding-top: 1.5rem;
+    padding: 1.5rem;
+    object-fit: cover;
+    width: 80%;
+    max-height: 80%;
 }
 
 .project1 {
@@ -293,6 +392,19 @@ nav a {
     grid-area: project3;
     padding-bottom: 3rem;
 }
+
+.project4 {
+  grid-area: project4;
+  padding-bottom: 3rem; 
+}*/
+
+
+
+
+/*#endregion PROJECT*/
+
+
+/*#region CONTACT*/
 
 .general-contact {
     grid-area: contact;
@@ -479,6 +591,9 @@ nav a {
   hr {
     border-color: rgba(255,255,255,.6);
   }
+
+  /*#endregion CONTACT*/
+
   
   /* Begin Media Queries*/
   @media screen and (max-width: 850px) {
@@ -488,7 +603,7 @@ nav a {
     }
     .direct-contact-container, .form-horizontal {
       margin: 0 auto;
-    }  
+    }  You now have a contact form that sends all sub
     
     .direct-contact-container {
       margin-top: 60px;
@@ -548,3 +663,86 @@ nav a {
       width: 99%;
     }
   }
+
+
+/*#region SPOTIFY*/
+
+.general-grid-spotify {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  /* grid-template-columns: auto; */
+  grid-template-areas: 
+          "title"
+          "more"
+          "body2";
+  width: 100%;
+  height: 100vh;
+}
+
+.spotify-presentation {
+  grid-area: title;
+  width: 80%;
+  margin: auto;
+}
+
+.spotify-presentation h2 {
+  /* align-self: center; */
+  /* place-self: center; */
+  text-align: center;
+  padding-top: 2%;
+  /* justify-self: center; */
+}
+
+.spotify-presentation h3 {
+  padding: 2% 0;
+}
+
+.first-part-spot {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-areas: "text1 gif1";
+  padding-top: 4%;
+  padding-bottom: 2%;
+}
+
+.first-part-spot h5 {
+  grid-area: text1;
+  text-align: justify;
+}
+
+.first-part-spot img {
+  grid-area: gif1;
+  width: 80%;
+  height: 10rem;
+  place-self: center;
+}
+
+.second-part-spot {
+  padding-top: 1%;
+}
+
+.second-part-spot img {
+  width: 30rem;
+  height: 25rem;
+  display: block;
+  margin: auto;
+  padding: 2% 0;
+
+}
+
+.more {
+  grid-area: more;
+  width: 80%;
+  margin: auto;
+}
+
+.more h4 {
+  padding: 4% 0;
+}
+
+.more a {
+  color: white;
+  text-decoration: none;
+}
+
+/*#endregion SPOTIFY*/
