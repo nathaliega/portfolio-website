@@ -296,8 +296,8 @@ nav a {
   /* transition: all 2s; */
   filter: blur(5px);
   transform: translateX(-100%);
-  width: 300px;
-  height: 550px;
+  width: 16rem;
+  height: 30rem;
   border: 1.5px solid black;
   box-shadow: 5px 5px 20px rgb(31, 31, 31);
   transition: all .2s ease-in-out; 
@@ -326,7 +326,8 @@ nav a {
   padding: 1.5rem;
   object-fit: cover;
   width: 80%;
-  max-height: 80%;
+  height: 9rem;
+  /* max-height: 80%; */
 }
 
 .project h3 {
