@@ -300,7 +300,7 @@ nav a {
   height: 30rem;
   border: 1.5px solid black;
   box-shadow: 5px 5px 20px rgb(31, 31, 31);
-  transition: all .2s ease-in-out; 
+  transition: all .05s ease-in-out; 
 }
 
 .show{
@@ -327,7 +327,6 @@ nav a {
   object-fit: cover;
   width: 80%;
   height: 9rem;
-  /* max-height: 80%; */
 }
 
 .project h3 {
@@ -339,68 +338,12 @@ nav a {
 .project-text{
   width: 80%;
   margin: auto;
-  
-
 }
 
 .project p {
   right: 0;
   bottom: 1rem;
 }
-
-
-/* .projects-container {
-    display: grid;
-    grid-template-rows: 50% 50%;
-    grid-template-columns: 50% 50%;
-    grid-template-areas:
-        "project1 project2"
-        "project3 project4";
-    width: 80%;
-    margin: auto;
-}
-
-.general-projects h2 {
-    text-align: center;
-    padding: 3rem 0;
-}
-
-.general-projects h3 {
-    text-align: center;
-}
-
-.general-projects img {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    padding: 1.5rem;
-    object-fit: cover;
-    width: 80%;
-    max-height: 80%;
-}
-
-.project1 {
-    grid-area: project1;
-    padding-bottom: 3rem;
-}
-
-.project2 {
-    grid-area: project2;
-    padding-bottom: 3rem;
-}
-
-.project3 {
-    grid-area: project3;
-    padding-bottom: 3rem;
-}
-
-.project4 {
-  grid-area: project4;
-  padding-bottom: 3rem; 
-}*/
-
-
-
 
 /*#endregion PROJECT*/
 
@@ -597,7 +540,86 @@ nav a {
 
   
   /* Begin Media Queries*/
-  @media screen and (max-width: 850px) {
+  @media screen and (min-width: 850px) {
+
+
+  /*#region PRESENTATION2 */
+  .presentation-container {
+      display: grid;
+      width: 70%;
+      grid-template-columns: 55% 45%;
+      grid-template-areas: "text picture";
+      margin: auto;
+      position: relative;
+      margin-top: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-bottom: 6rem;
+  } 
+  
+  .text-container {
+      grid-area: text;
+      display: grid;
+      grid-template-rows: 20% 26% 26% 10% 10%;
+      grid-template-areas:
+          "hello"
+          "name"
+          "last-name"
+          "sentence1"
+          "sentence2" ;
+  
+  }
+  
+  .text-container h1 {
+      grid-area: 
+          name
+          last-name;
+      margin-right: 0;
+      margin-top: 0;
+      text-align: center;
+      font-size: 3.75rem;
+  }
+  
+  /*#endregion PRESENTATION2 */
+
+  /*#region PROJECTS2 */
+  
+.project {
+  opacity: 0;
+  /* transition: all 2s; */
+  filter: blur(5px);
+  transform: translateX(-100%);
+  width: 13rem;
+  height: 30rem;
+  border: 1.5px solid black;
+  box-shadow: 5px 5px 20px rgb(31, 31, 31);
+  transition: all .05s ease-in-out; 
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 1s;
+}
+
+.project:hover {
+  transform: scale(1.1); 
+}
+
+.project h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.project h5 {
+  font-size: 0.8rem;
+}
+
+
+  /*#region CONTACT2 */
+
     .contact-wrapper {
       display: flex;
       flex-direction: column;
@@ -621,6 +643,8 @@ nav a {
       line-height: 60px;
     }
   }
+
+  /*#endregion CONTACT2*/
   
   @media screen and (max-width: 569px) {
   
