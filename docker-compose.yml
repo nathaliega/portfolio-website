@@ -1,5 +1,9 @@
-version: latest 
 services: 
   apache: 
-    image: httpd:latest
-    
+    build: . 
+    ports: 
+      - "9000:80"
+    volumes:
+      - "./templates:/usr/local/apache2/htdocs"
+      - "./static:/usr/local/apache2/htdocs/static"
+      - "./images:/usr/local/apache2/htdocs/images"
