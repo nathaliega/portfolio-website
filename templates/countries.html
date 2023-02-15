@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/website.css">
 </head>
 <body>
     <div class="noise"></div>
@@ -13,30 +14,26 @@
         <div class="spotify-presentation">
             <h2 class="title">Countries API</h2>
             <h3>So... how does it work?</h3>
-            <h5>This application takes all the liked songs of a user and classifies them by language 
-                creating a playlist for each of them, and it is written in Python using Flask.</h5>
-            <div class="first-part-spot">
-                <h5>To begin, the user has to authorize the app to access their Spotify account data 
-                    through the Spotify API. Then the app gets all the songs from user’s favourites, 
-                    and using their titles it attemps to determine their language through the Genius API. 
-                    After assigning a language to each song, it creates playlists with songs in each language. 
-                    If a playlist for a given language already exists, it will be updated.
+            <h5>My goal with this project was to create an API that allows the user to access some of 
+                the main economic indicators of a country. <br> To do so I laid out the structure I 
+                wanted the database to have, which was the following:</h5>
+            <div class="models-countries">
+                <h5>	Three models: <br>
+                    1.- Countries: includes all the economics indicators and has relationships with both 
+                    of the other tables <br>
+                    2.- Continents: contains the continents names and ids <br>
+                    3.- Regions: contains the regions names and ids
                 </h5>
-                <img src="/static/spotify/spotify.gif" alt="">
+                <!-- <img src="/static/spotify/spotify.gif" alt=""> -->
             </div>
-            <h3>Let's get a bit more into it...</h3>
+            <!-- <h3>Let's get a bit more into it...</h3> -->
             <div class="second-part-spot">
-                <h5>Regarding authorization, the first step is to ask the user to log in their Spotify 
-                    account so that the app can access their information, after this the user is redirected 
-                    back to the app with a code. This code is then used to make a POST request the 
-                    /api/token endpoint, from this we get the access token which allows us to actually make 
-                    use of the user’s information <br> It is nicely explained by Spotify in their 
-                    authorization code flow chart: </h5>
-                <img src="/static/spotify/AuthoriztionCode.png" alt="">
-                <h5>An issue encountered was that for getting the languages of the songs, the program uses 
-                    the Genius API to send requests attempting to match each song with its language. This is 
-                    a very time consuming task, which is why I implemented concurrent programming to be able 
-                    to send parallel requests which reduces significantly the execution time. </h5>
+                <h5>This was done through the SQLAlchemy ORM, which allows us to communicate to the 
+                    database using Python by acting like a “bridge” between them. </h5>
+                <!-- <img src="/static/spotify/AuthoriztionCode.png" alt=""> -->
+                <h5>To write endpoints I used FastAPI, a framework typically used to build APIs. Each 
+                    endpoint calls a CRUD (Create, Read, Update, Delete) function that allows the user 
+                    to manipulate the database data in some way. </h5>
                 <h5> <br> Finally, in regards to hosting, it is done using Docker to create a container which is 
                     an isolated lightweight Linux environment with all necessary dependencies installed.</h5>
             </div>
