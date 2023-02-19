@@ -251,8 +251,6 @@ body{
   place-self: center;
 }
 
-
-
 .project {
   opacity: 0;
   /* transition: all 2s; */
@@ -312,6 +310,59 @@ body{
   right: 0;
   bottom: 1rem;
 }
+
+
+.github-container{
+  display: flex;
+  padding: .3rem;
+  padding-bottom: .2rem;
+}
+
+.github {
+  /* border: solid;
+  border-color: black;
+  border-width: 0.1rem; */
+  /* display: flex; */
+  display: inline-block;
+  background-color: #000;
+  width: fit-content;
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: all .25s ease-in;
+  background-image: linear-gradient(to left,
+  transparent,
+  transparent 50%,
+  #201d1d 50%,
+  #201d1d);
+  margin-top: .5rem;
+  margin-bottom: 1.7rem;
+}
+
+.github:hover {
+  /* background-color: rgb(32, 29, 29);  */
+  /* border-color: rgb(32, 29, 29); */
+  cursor: pointer;
+  background-position: 0 0;
+
+  /* color: #000000; */
+}
+
+.github h5 {
+  padding-left: .5rem;
+  
+}
+
+/* .github h5:hover{
+  color: black;
+} */
+
+.github i {
+  width: 1rem;
+}
+
+/* .github i:hover{
+  color: black;
+} */
 
 .coming-soon h3, .coming-soon img, .coming-soon h6, .coming-soon h5{
   filter: blur(4.5px);
@@ -685,7 +736,7 @@ body{
 
   /*#endregion CONTACT*/
 
- 
+
 /*#region SPOTIFY*/
 
 .general-grid-spotify {
@@ -800,6 +851,7 @@ body{
 }
 
 /*#endregion SPOTIFY*/
+
 
 /*#region COUNTRIES*/
 
