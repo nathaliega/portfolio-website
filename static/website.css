@@ -288,6 +288,7 @@ body{
   object-fit: cover;
   /* height: 11rem; */
   width: 80%;
+  height: 29%;
 }
 
 .project h3 {
@@ -336,6 +337,7 @@ body{
   #201d1d);
   margin-top: .3rem;
   margin-bottom: 1.5rem;
+  border-radius: 20px;
 }
 
 .github:hover {
