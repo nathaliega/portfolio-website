@@ -1,4 +1,3 @@
-FROM httpd:latest
+FROM python:3.9-slim
 
-RUN rm /usr/local/apache2/htdocs/index.html
-COPY . /usr/local/apache2/htdocs
+WORKDIR /app
