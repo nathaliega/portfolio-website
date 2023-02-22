@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/website.css">
+    <title>Country data API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='website.css') }}">
 </head>
 <body>
     <div class="noise"></div>
@@ -18,12 +18,18 @@
                 the main economic indicators of a country. <br> To do so I laid out the structure I 
                 wanted the database to have, which was the following:</h5>
             <div class="models-countries">
-                <h5>	Three models: <br>
+                <!-- <h5>	Three models: <br>
                     1.- Countries: includes all the economics indicators and has relationships with both 
                     of the other tables <br>
                     2.- Continents: contains the continents names and ids <br>
                     3.- Regions: contains the regions names and ids
-                </h5>
+                </h5> -->
+                <ol> Three models:
+                    <li>Countries: includes all the economics indicators and has relationships with both 
+                        of the other tables</li>
+                    <li>Continents: contains the continents names and ids</li>
+                    <li>Regions: contains the regions names and ids</li>
+                </ol>
                 <!-- <img src="/static/spotify/spotify.gif" alt=""> -->
             </div>
             <!-- <h3>Let's get a bit more into it...</h3> -->
@@ -39,7 +45,7 @@
             </div>
         </div>
         <div class="more">
-            <h4> <a href="/index.html#general-projects">Check out my other projects!</a></h4>
+            <h4> <a href="{{ url_for('main') }}">Check out my other projects!</a></h4>
         </div>
     </section>
 </body>

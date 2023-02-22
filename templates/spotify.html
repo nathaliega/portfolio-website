@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/website.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='website.css') }}">
     <title>Spotify Language Sorter</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
                     After assigning a language to each song, it creates playlists with songs in each language. 
                     If a playlist for a given language already exists, it will be updated.
                 </h5>
-                <img src="/static/spotify/spotify.gif" alt="">
+                <img src="{{ url_for('static', filename='spotify/spotify.gif') }}" alt="">
             </div>
             <h3>Let's get a bit more into it...</h3>
             <div class="second-part-spot">
@@ -33,7 +33,7 @@
                     /api/token endpoint, from this we get the access token which allows us to actually make 
                     use of the user's information. <br> It is nicely explained by Spotify in their 
                     authorization code flow chart: </h5>
-                <img src="/static/spotify/AuthoriztionCode.png" alt="">
+                <img src="{{ url_for('static', filename='spotify/AuthoriztionCode.png') }}" alt="">
                 <h5>An issue encountered was that for getting the languages of the songs, the program uses 
                     the Genius API to send requests attempting to match each song with its language. This is 
                     a very time consuming task, which is why I implemented concurrent programming to be able 
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="more">
-            <h4> <a href="index.html#general-projects">Check out my other projects!</a></h4>
+            <h4> <a href="{{ url_for('main')}}">Check out my other projects!</a></h4>
         </div>
     </section>
 

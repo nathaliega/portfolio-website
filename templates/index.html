@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/website.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='website.css') }}">
     <title>Nathalie's Portfolio</title>
     <script src="https://kit.fontawesome.com/6b510f28ef.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="images/n5.png">
+    <link rel="icon" href="{{ url_for('static', filename='main/n5.png') }}">
 </head>
 <body>
   
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="picture">
-                    <img src="/images/pngegg.png" alt="computer">
+                    <img src="{{ url_for('static', filename='main/pngegg.png') }}" alt="computer">
                 </div>
 
             </div>
@@ -54,8 +54,8 @@
             <div class="projects-container">
                 
                 <div class="project">
-                    <h3> <a href="spotify.html"> Spotify Language Sorter </a></h3>
-                    <a href="spotify.html"> <img src="/static/spotify/coverspotify.png" alt="placeholder"> </a>
+                    <h3> <a href="{{ url_for('spotify') }}"> Spotify Language Sorter </a></h3>
+                    <a href="{{ url_for('spotify') }}"> <img src="{{ url_for('static', filename='spotify/coverspotify.png') }}" alt="placeholder"> </a>
                     <div class="project-text">
                       <h5><span class="bold"> <br> Tools: </span>Python, Flask, Docker </h5>
                       <div class="github">
@@ -66,14 +66,14 @@
                         </div>
                         </div>
                         <h6> This sorter takes all the liked songs of a user and classifies them by language creating a playlist for each of them. </h6>
-                        <h5> <span class="bold"> <a href="http://178.217.113.103/spotify/" target="_blank"> <br> Try it out!</a></span></h5>
+                        <h5> <span class="bold"> <a href="http://kpielat.pl/nathalie/spotify/" target="_blank"> <br> Try it out!</a></span></h5>
                       <!-- <p>Learn more ></p> -->
                     </div>  
                 </div>
 
                 <div class="project second-row">
-                    <h3> <a href="countries.html">API For Countries Data </a></h3>
-                    <a href="countries.html"> <img src="/static/api/apicover.png" alt="placeholder"> </a>
+                    <h3> <a href="{{ url_for('api') }}">API For Countries Data </a></h3>
+                    <a href="{{ url_for('api') }}"> <img src="{{ url_for('static', filename='api/apicover.png') }}" alt="placeholder"> </a>
                     <div class="project-text">
                       <h5> <span class="bold"> <br>  Tools: </span>Python, SQLAlchemy, FastAPI, Docker</h5>
                       <div class="github">
@@ -91,8 +91,8 @@
                 </div>
 
                 <div class="project">
-                    <h3><a href="youtube.html">Youtube Trends: Analysis</a></h3>
-                    <a href="youtube.html"> <img  src="/static/youtube/coveryoutube.png" alt="placeholder"> </a>
+                    <h3><a href="{{ url_for('youtube') }}">Youtube Trends: Analysis</a></h3>
+                    <a href="{{ url_for('youtube') }}"> <img  src="{{ url_for('static', filename='youtube/coveryoutube.png') }}" alt="placeholder"> </a>
                     <div class="project-text">
                       <h5><span class="bold"><br>Tools: </span> Python</h5>
                       <div class="github">
@@ -109,8 +109,8 @@
                 </div>
 
                 <div class="project">
-                  <h3><a href="sentiment identificator.html">Sentiment Identificator</a></h3>
-                  <a href="sentiment identificator.html"> <img src="/static/sentiment/sentimentcover.png" alt="placeholder"> </a>
+                  <h3><a href="{{ url_for('sentiment') }}">Sentiment Identificator</a></h3>
+                  <a href="{{ url_for('sentiment') }}"> <img src="{{ url_for('static', filename='sentiment/sentimentcover.png') }}" alt="placeholder"> </a>
                   <div class="project-text">
                     <h5><span class="bold"><br>Tools:</span> Python</h5>
                     <div class="github">
@@ -137,7 +137,7 @@
                     <div class="shadow"></div>
                     <div class="shadow"></div>
                 </div>
-                  <img src="/images/placeholder.png" alt="placeholder">
+                  <img src="{{ url_for('static', filename='main/placeholder.png') }}" alt="placeholder">
                   <div class="project-text">
                     <h6> <br> Program that determines whether the sentiment of a given text is positive or negative </h6>
                     <h5><span class="bold"><br>Tools:</span> Python</h5>
