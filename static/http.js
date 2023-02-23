@@ -22,6 +22,10 @@ const sendHttpRequest = (method, url, data, headers) => {
             reject('Something went wrong!')
         }
 
+        xhr.setRequestHeader('X-RequestedWith', 'XMLHttpRequests');
+        
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+
         xhr.send(JSON.stringify(data));
                         
     });

@@ -1,7 +1,7 @@
 from flask import render_template
 from under_proxy import get_flask_app
 
-app = get_flask_app(prefix="/nathalie")
+app = get_flask_app()
 
 
 @app.route("/")
