@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Country data API</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='website.css') }}">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='http.js') }}"></script>
 </head>
 <body>
     <div class="noise"></div>
@@ -36,17 +38,26 @@
             <div class="second-part-spot">
                 <h5>This was done through the SQLAlchemy ORM, which allows us to communicate to the 
                     database using Python by acting like a “bridge” between them. </h5>
-                <!-- <img src="/static/spotify/AuthoriztionCode.png" alt=""> -->
-                <h5>To write endpoints I used FastAPI, a framework typically used to build APIs. Each 
-                    endpoint calls a CRUD (Create, Read, Update, Delete) function that allows the user 
-                    to manipulate the database data in some way. </h5>
-                <h5> <br> Finally, in regards to hosting, it is done using Docker to create a container which is 
-                    an isolated lightweight Linux environment with all necessary dependencies installed.</h5>
-            </div>
-        </div>
-        <div class="more">
-            <h4> <a href="{{ url_for('main') }}">Check out my other projects!</a></h4>
+                    <!-- <img src="/static/spotify/AuthoriztionCode.png" alt=""> -->
+                    <h5>To write endpoints I used FastAPI, a framework typically used to build APIs. Each 
+                        endpoint calls a CRUD (Create, Read, Update, Delete) function that allows the user 
+                        to manipulate the database data in some way. </h5>
+                        <h5> <br> Finally, in regards to hosting, it is done using Docker to create a container which is 
+                            an isolated lightweight Linux environment with all necessary dependencies installed.</h5>
+                        </div>
+                        <div class="bgimg">
+                            <input class="button-api" type="text" id="input">
+                            <button  id="button">click me</button> 
+                            <pre class="api_box" id="output"></pre>
+                        </div>
+                    </div>
+                    <div class="more">
+                        <h4> <a href="{{ url_for('main') }}">Check out my other projects!</a></h4>
         </div>
     </section>
+
+    <script>
+        makeAPIButton("GET", "http://kpielat.pl/nathalie/api/country", null, null, "#input", "#button", "#output"); 
+    </script>
 </body>
 </html>

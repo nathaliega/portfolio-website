@@ -1,7 +1,7 @@
 from flask import render_template
 from under_proxy import get_flask_app
 
-app = get_flask_app()
+app = get_flask_app(prefix="/nathalie")
 
 
 @app.route("/")
@@ -9,7 +9,7 @@ def main():
     return render_template("index.html")
 
 
-@app.route("/spotify")
+@app.route("/spotify_project")
 def spotify():
     return render_template("spotify.html")
 
